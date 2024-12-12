@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "Django";
+
+    <body>
+        <h1>Criando um projeto Python utilizando o Django!</h1>
+        <pre>
+                                <div class="container">
+                                    Para iniciar um projeto, iremos criar o diretorio e abrir o terminal dentro dele.
+                                    Utilizando alguns comandos iremos criar o projeto base
+                                    pip install Django ------ para instalar o Django no ambiente
+                                    django-admin ------ para checar a instalacao correta do Django
+                                    django-admin startproject nomedoprojeto ------ para criar o projeto com o framework
+                                    acesse a pasta do projeto criado com o cd 
+                                    python manage.py runserver ------ para iniciar o servidor local do projeto e isso criará um BD
+                                    python manage.py startapp nomedoaplicativo ------ para iniciar um app dentro do projeto Django
+                                    declarar o aplicativo criado no comando anterior dentro do settings.py assim como os outros que ja estao la   
+                                    python manage.py migrate ------ migrar as informacoes para o BD criado pelo Django
+                                </div>
+                                <div class=container>
+                                <h2>no arquivo urls no app principal deve estar assim</h2>
+
+                                    from django.contrib import admin
+                                    from django.urls import include, path
+
+
+                                    urlpatterns = [
+                                        path('', include('learn.urls')),
+                                        path('admin/', admin.site.urls),
+                                    ]
+
+
+                                aqui iremos referenciat o path do arquivo de urls do app criado utilizando o path 
+                                </div>
+                                <div class=container>
+                                <h2>no arquivo urls do app criado deve estar assim</h2> 
+
+                                    from django.urls import path
+
+                                    from . import views
+
+                                    urlpatterns = [
+                                        path('', views.index, name='index')
+                                    ]
+
+
+                                aqui indicaremos o caminho de cada pagina criada dentro do app
+                                </div>  
+                                <div class=container>
+                                <h2>no views do app criado deve estar assim</h2>
+
+                                    from django.shortcuts import render
+                                    from django.http import HttpResponse
+                                    # Create your views here.
+
+                                    def index(request):
+                                        return render(request, 'index.html')
+
+                                    def criando_django(request):
+                                        return render(request, 'criando_django.html')
+
+                                    def conceitos_csharp(request):
+                                        return render(request, 'conceitos_csharp.html')
+
+
+                                aqui criaremos a funcao que renderiza cada pagina em cada path apontado no arquivo    
+                                de urls e cada funcao deve estar ligada a uma pagina html que sera mais tarde ligada a um css e js    
+                                </div>
+                                <div class=container>
+                                <h2>Link para o tutorial em video</h2>    
+                                    https://www.hashtagtreinamentos.com/projeto-em-django-python?gad_source=1&gclid=CjwKCAiA_tuuBhAUEiwAvxkgTpX-ZqcyOIncN54D9_dM27JDqGvmzxF_tlG7mAA2lEKQOsVYkX9V_xoCyVMQAvD_BwE
+                                </div>
+
+                                </pre>
+    </body>
+}

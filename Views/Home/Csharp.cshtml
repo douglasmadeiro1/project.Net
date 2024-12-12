@@ -1,0 +1,569 @@
+@{
+    ViewData["Title"] = "Csharp";
+
+    <body>
+        <h1>Fundamentos de C#</h1>
+        <pre>
+                    <div class=container>   
+                    <h2>aula 1 - impressao na tela do terminal</h2>
+
+                    using System;
+
+                    class Principal{
+                        static void Main(){
+                            Console.Write("Hello, World! ");
+                        }
+                    }
+
+                    </div>
+                    <div class=container> 
+                    <h2>aula 2 declaracao de variavel do tipo string</h2>
+
+                    using System;
+
+                    namespace Aula02
+                    {
+                        class Program
+                        {
+                            static void Main(string[] args)
+                            {
+                                var texto = "Testando";
+                                Console.WriteLine(texto);
+                            }
+                        }
+                    }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 3 - declaracao de variaveis e seus tipos</h2>
+
+                    using System;
+
+                    namespace Aula03
+                    {
+                        class Aula03
+                        {
+                            static void Main()
+                            {
+                                int num1, num2, res; // declarar mais de uma variavel com o mesmo tipo
+
+                                num1 = 10;
+                                num2 = 2;
+                                res = num1 + num2; // posso realizar essa conta diretamente no Console.WriteLine
+
+                                // byte n1 = 10; // 0 a 255
+                                // int num = -10;
+                                // char letra = '3'; // armazena apenas 1 caractere seja letra ou numero
+                                // float valor = 5.3f;
+                                // string nome = "Douglas"; // armazena mais de 1 caractere - cadeia de caracteres
+                                // var aux = nome; // seu tio é atribuido no momento da compilacao de acordo com o valor recebido
+
+                                Console.WriteLine("A soma de " + num1 + " + " + num2 + " é igual a " + res);
+                            }
+                        }
+                    }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 4 - conceito de variavel global e local</h2>
+
+                    using System;
+                    class Aula04
+                    {
+                        static int num = 10; // variavel global - declarada como static se for utilizada dentro de um metodo static
+                        static void Main()
+                        {
+                            int num2 = 0; // variavel local
+                            Console.WriteLine(num); // imprimindo variavel global
+                            Console.WriteLine(num2); // imprimindo variavel local
+                        }
+                    }
+                    </div>
+                    <div class=container>
+                    <h2>aula 5 - operadores de comparacao e incremento em variavel</h2>
+
+                    using System;
+
+                    class Aula05
+                    {
+                        static void Main()
+                        {
+
+                            bool res = (5 > 3);
+
+                            // & = AND
+                            // 
+
+                            // int num = 10;
+                            // num++; // incremento de 1
+
+                            // int num = 10;
+                            // num += 1; // incremento de 1 - serve para qualquer operador matematico + - * /
+
+                            // int num = 10;
+                            // num = num + 1; // incremento de 1
+
+                            // bool res = 5 == 5; // comparacao
+
+                            // int res = 10 + 5 * 2;
+                            Console.WriteLine(res);
+                        }
+                    }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 6 - formatacao de saida</h2>
+                        using System;
+
+                        class Aula06
+                        {
+
+                            static void Main()
+                            {
+                                //  O Console.Write nao quebra a linha no final do texto o Writeline sim.
+                                int n1, n2, n3;
+
+                                n1 = 10; n2 = 20; n3 = 30;
+
+                                // Console.Write(n1 + ", " + n2 + ", " + n3);
+                                Console.Write("n1={0}, n2={1}, n3={2}.", n1, n2, n3);
+                                Console.WriteLine(" ");
+                                Console.Write("\nn1={0} \nn2={1} \nn3={2}", n1, n2, n3);
+                                Console.WriteLine(" ");
+                                Console.Write("\nn1\t=\t{0} \nn2\t=\t{1} \nn3\t=\t{2}", n1, n2, n3);
+                                // \n serve como caractere de escape assim como no python
+                                // \t serve para gerar uma tabulacao, afasta o conteudo da margem
+                            }
+                        }
+
+                        using System;
+                        class Aula06
+                        {
+
+                            static void Main()
+                            {
+
+                                double valorCompra = 5.50;
+                                double valorVenda;
+                                double lucro = 0.1;
+                                string produto = "Pastel";
+
+                                valorVenda = valorCompra + (valorCompra * lucro);
+
+                                Console.WriteLine("Produto...........: {0,15}", produto);
+                                Console.WriteLine("Val. Compra.......: {0,15:c}", valorCompra);
+                                Console.WriteLine("Lucro.............: {0,15:p}", lucro);
+                                Console.WriteLine("Valor de venda....: {0,15:c}", valorVenda);  
+                            }
+                        }  
+                    </div>
+                    <div class=container>     
+                    <h2>aula 7 - constantes</h2>
+
+                        using System;
+                        class Aula06
+                        {
+                            static void Main()
+                            {
+                                const string nome = "Douglas";
+                                const double pi = 3.1415;
+
+
+                                Console.WriteLine("O nome é {0} e o valor de pi é {1}", nome, pi);
+                            }
+
+                        }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 8 - entrada de valores do teclado</h2>
+
+                        using System;
+
+                        class Aula08
+                        {
+                            static void Main()
+                            {
+                                int v1, v2, soma;
+                                string nome;
+
+                                Console.Write("Digite seu nome: ");
+                                nome = Console.ReadLine();
+                                Console.WriteLine("O nome digitado foi {0}", nome);
+                                // Console.Read e Console.ReadLine funcionam iguais ao write, porem para ler dados
+                            }
+                        }
+
+                    <h3>Realizando conta fazendo a conversao da entrada de string para int de duas formas</h3>
+
+                    <h3>primeira forma</h3>
+
+                        using System;
+
+                        class Aula08
+                        {
+
+                            static void Main()
+                            {
+                                int v1, v2, soma;
+                                Console.Write("Digiteo primeiro valor: ");
+                                v1 = int.Parse(Console.ReadLine());
+                                Console.Write("Digiteo segundo valor: ");
+                                v2 = int.Parse(Console.ReadLine());
+                                soma = v1 + v2;
+                                Console.WriteLine("O valor da soma de {0} e {1} éigual a {2}", v1, v2, soma);
+
+
+                                //     int v1, v2, soma;
+                                //     string nome;
+
+                                //     Console.Write("Digite seu nome: ");
+                                //     nome = Console.ReadLine();
+                                //     Console.WriteLine("O nome digitado foi {0}", nome);
+                                //     // Console.Read e Console.ReadLine funcionam iguais ao write, porem para ler dados
+                            }
+                        }
+
+                    <h3>segunda forma</h3>
+
+                        using System;
+                        class Aula08
+                        {
+
+                            static void Main()
+                            {
+
+                                int v1, v2, soma;
+                                Console.Write("Digiteo primeiro valor: ");
+                                v1 = Convert.ToInt32(Console.ReadLine());
+                                Console.Write("Digiteo segundo valor: ");
+                                v2 = Convert.ToInt32(Console.ReadLine());
+                                soma = v1 + v2;
+                                Console.WriteLine("O valor da soma de {0} e {1} éigual a {2}", v1, v2, soma);
+
+                            }
+                        }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 9 - Operações de Bitwise</h2>
+                    Operador de Bitwise para a menor menor vai dobrar o valor e para a >> vai dividir pela metade
+
+                        using System;
+
+                        class aula09
+                        {
+                            static void Main()
+                            {
+                                int num = 10;
+                                num = num >> 1;
+                                Console.WriteLine(num);
+
+                                int num2 = 10;
+                                num2 = num2 menor menor 1;
+                                Console.WriteLine(num2);
+
+                                int num3 = 2;
+                                num3 = num3 menor menor 2; // desloca o numero 2 bits para a esquerda,
+                                Console.WriteLine(num3);
+
+                                <img src="{% static 'images/bitwise.jpg' %}" alt="exemplo de aplicacao do birwise">
+
+                            }
+                        }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 10 - enumeradores</h2>
+
+                        using System;
+
+
+                        class Aula10
+                        {
+                            enum DiasSemana { Domingo, Segunda, Terca, Quarta, Quinta, Sexta, Sabado };
+                            static void Main()
+                            {
+                                DiasSemana ds = DiasSemana.Domingo;
+                                Console.WriteLine(ds);
+                            }
+                        }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 11 - conversao de tipos</h2>
+
+                    <h3>Conversao impllicita</h3>
+
+                        using System;
+
+                         class Aula11
+                        {
+                            static void Main()
+                            {
+                                int n1 = 10;
+                                float n2 = n1;
+                                Console.WriteLine(n2);
+                            }
+                        }
+
+                    <h3>Conversao explicita // necessita de cast</h3>
+                        using System;
+
+                        class Aula11
+                        {
+                            static void Main()
+                            {
+                                float n1 = 10.5f;
+                                int n2 = (int)n1; // operacao de type cast
+                                Console.WriteLine(n2);
+                            }
+                        }
+
+                        </div>
+
+                    <div class=container> 
+                    <h2>aula 12 - condicional if</h2>
+                        using System;
+
+                        class Aula12
+                        {
+                            static void Main()
+                            {
+                                int n1, n2, n3, n4, media;
+                                media = n1 = n2 = n3 = n4 = 0;
+
+                                string resultado = "Reprovado";
+
+                                Console.Write("Digite a primeira nota: ");
+                                n1 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                Console.Write("Digite a segunda nota: ");
+                                n2 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                Console.Write("Digite a terceira nota: ");
+                                n3 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                Console.Write("Digite a quarta nota: ");
+                                n4 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                media = (n1 + n2 + n3 + n4) / 4;
+
+                                if (media >= 5)
+                                {
+                                    resultado = "Aprovado";
+                                    Console.WriteLine("A média final foi {0} \t Aluno: {1}", media, resultado);
+                                }
+                            }
+                        }
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 13 - if else</h2>
+                        using System;
+
+                        namespace Aula13
+                        {
+                            class Aula13
+                            {
+                                static void Main()
+                                {
+                                    int n1, n2, n3, n4, media;
+                                    media = n1 = n2 = n3 = n4 = 0;
+
+                                    string resultado = "Reprovado";
+
+                                    Console.Write("Digite a primeira nota: ");
+                                    n1 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                    Console.Write("Digite a segunda nota: ");
+                                    n2 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                    Console.Write("Digite a terceira nota: ");
+                                    n3 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                    Console.Write("Digite a quarta nota: ");
+                                    n4 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                    media = (n1 + n2 + n3 + n4) / 4;
+
+                                    if (media >= 5)
+                                    {
+                                        resultado = "Aprovado";
+                                    }
+                                    else if (media >= 3)
+                                    {
+                                        resultado = "Recuperacao";
+                                    }
+                                    else
+                                    {
+                                        resultado = "Reprovado";
+                                    }
+                                    Console.WriteLine("A média final foi {0} \t Aluno: {1}", media, resultado);
+
+                                }
+                            }
+                        }
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 14 - if aninhado</h2>
+                    using System;
+
+                    namespace Aula13
+                    {
+                        class Aula13
+                        {
+                            static void Main()
+                            {
+                                int n1, n2, n3, n4, media;
+                                media = n1 = n2 = n3 = n4 = 0;
+
+                                string resultado = "Reprovado";
+
+                                Console.Write("Digite a primeira nota: ");
+                                n1 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                Console.Write("Digite a segunda nota: ");
+                                n2 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                Console.Write("Digite a terceira nota: ");
+                                n3 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                Console.Write("Digite a quarta nota: ");
+                                n4 = int.Parse(Console.ReadLine()); // fazendo o casting da entrada string para int
+
+                                media = (n1 + n2 + n3 + n4) / 4;
+
+                                if (media >= 5)
+                                {
+                                    if (media >= 9)
+                                    {
+                                        if (media == 10)
+                                        {
+                                            resultado = "Aluno modelo";
+                                        }
+                                        else
+                                        {
+                                            resultado = "Aprovado com honra";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        resultado = "Aprovado";
+                                    }
+                                }
+                                else
+                                {
+                                    if (media menor 3)
+                                    {
+                                        resultado = "Reprovado";
+                                    }
+                                    else
+                                    {
+                                        resultado = "Recuperacao";
+                                    }
+                                }
+                                Console.WriteLine("A média final foi {0} \t Aluno: {1}", media, resultado);
+
+                            }
+                        }
+                    }
+                    </div>
+                    <div class=container> 
+                    <h2>aula 15 - SWITCH case</h2>
+
+                    using System;
+                    class Aula15
+                    {
+                        static void Main()
+                        {
+                            while (true)
+                            {
+                                int tempo = 0;
+                                char escolha = ' ';
+
+
+                                Console.WriteLine("Sao Paulo a Alagoas");
+                                Console.WriteLine("Escolha o transporte: [a]viao, [c]arro, [o]nibus ");
+                                escolha = char.Parse(Console.ReadLine());
+
+                                switch (escolha)
+                                {
+                                    case 'a':
+                                    case 'A':
+                                        tempo = 2;
+                                        break;
+                                    case 'c':
+                                    case 'C':
+                                        tempo = 34;
+                                        break;
+                                    case 'o':
+                                    case 'O':
+                                        tempo = 40;
+                                        break;
+                                    default:
+                                        tempo = -1;
+                                        break;
+                                }
+                                if (tempo menor 0)
+                                {
+                                    Console.WriteLine("Transporte indisponivel");
+                                    continue;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Utilizando o meio de transporte escolhido, o tempo de viagem é de {0} horas", tempo);
+                                    break;
+
+                                }
+                            }
+                        }
+                    }
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 16 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 17 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 18 - </h2>
+
+                    </div>
+                    <div class=container> 
+                    <h2>aula 19 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 20 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 21 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 22 - </h2>
+
+                    </div>
+                    <div class=container> 
+                    <h2>aula 23 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 24 - </h2>
+
+                    </div>
+
+                    <div class=container> 
+                    <h2>aula 25 - </h2>
+
+                    </div>
+                    </pre>
+    </body>
+
+}
